@@ -6,6 +6,7 @@
 }
 :root {
   --primary-color: #58ba96;
+  /* --primary-color: rgb(88, 186, 150); */
   --primary-color-light: #71e1ba;
   --secondary-color: #032037;
   --main-bg-color: #f6f5f1;
@@ -76,10 +77,14 @@ h6 {
   color: var(--primary-color);
   background-color: transparent;
   border: 2px solid var(--primary-color);
-  /* transition: all 0.3s ease-in-out; */
+  transition: all 0.3s ease-in-out;
 }
 .btn-primary:hover {
   background-color: var(--primary-color-light);
+}
+.btn-secondary:hover {
+  color: #fff;
+  background-color: var(--primary-color);
 }
 .btn-link {
   position: relative;
