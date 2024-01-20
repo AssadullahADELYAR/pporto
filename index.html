@@ -9,19 +9,28 @@
   </head>
   <body>
     <!-- ---------------- HEADER -------------------- -->
-    <header class="container">
+    <header class="container header">
       <h1 class="logo">PPorto</h1>
-      <nav class="text-uppercase">
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Portfolio</a>
-        <a href="#">Services</a>
-        <a href="#">Contact</a>
+      <nav class="main-nav">
+        <ul class="main-nav-list">
+          <li><a class="main-nav-link" href="#">Home</a></li>
+          <li><a class="main-nav-link" href="#">About</a></li>
+          <li><a class="main-nav-link" href="#">Portfolio</a></li>
+          <li><a class="main-nav-link" href="#">Services</a></li>
+          <li><a class="main-nav-link" href="#">Contact</a></li>
+          <li>
+            <a href="#" class="btn btn-secondary btn-cta">Download CV</a>
+          </li>
+        </ul>
       </nav>
-      <a href="#" class="btn btn-secondary">Download CV</a>
+
+      <button class="btn-mobile-nav">
+        <span class="icon-mobile-nav icon-open">OPEN</span>
+        <span class="icon-mobile-nav icon-close">CLOSE</span>
+      </button>
     </header>
     <!-- ---------------- SECTION HERO -------------------- -->
-    <section class="container hero col-2">
+    <section class="container hero col-2" id="section--1">
       <div class="hero-text">
         <div class="intro">
           <p class="large-text text-primary-color">Hello, I'm</p>
@@ -39,12 +48,12 @@
         <a href="#" class="btn btn-primary">Download CV</a>
       </div>
       <div class="hero-image">
-        <img src="img/hero-image.png" alt="hero image" />
+        <img src="img/profile.png" alt="hero image" />
       </div>
     </section>
 
     <!-- ---------------- SECTION ABOUT -------------------- -->
-    <section class="about container col-2">
+    <section class="section about container col-2" id="section--2">
       <div class="about-image">
         <img src="img/hero-image.png" alt="about image" />
       </div>
@@ -66,7 +75,7 @@
     </section>
 
     <!-- ---------------- SECTION PORTFOLIO -------------------- -->
-    <section class="Portfolio container">
+    <section class="section portfolio container" id="section--3">
       <div class="portfolio-text text-align-center container-md section-header">
         <p class="large-text text-uppercase text-primary-color">Portfolio</p>
         <h2>My Amazing Works</h2>
@@ -99,7 +108,7 @@
     </section>
 
     <!-- ---------------- SECTION SKILLS -------------------- -->
-    <section class="skills container col-2">
+    <section class="section skills container col-2" id="section--4">
       <div class="skills-info section-header">
         <p class="large-text text-uppercase text-primary-color">My Skills</p>
         <h2>I Develop My Skills Regularly To Keep Me To Update</h2>
@@ -148,7 +157,7 @@
     </section>
 
     <!-- ---------------- SECTION SKILLS -------------------- -->
-    <section class="services container">
+    <section class="section services container" id="section--5">
       <div class="text-align-center container-md section-header">
         <p class="large-text text-uppercase text-primary-color">Services</p>
         <h2>What I Do For Clients</h2>
@@ -231,7 +240,7 @@
     </section>
 
     <!-- ---------------- SECTION TESTIMONIALS -------------------- -->
-    <section class="testimonials container">
+    <section class="section testimonials container" id="section--6">
       <div class="text-align-center container-md section-header">
         <p class="large-text text-uppercase text-primary-color">Testimonials</p>
         <h2>What Clients Say</h2>
@@ -242,27 +251,61 @@
         </p>
       </div>
       <div class="testimonial-container">
-        <div class="client-image">
-          <img src="img/hero-image.png" alt="" />
-        </div>
-        <div class="message-container">
-          <img src="img/quote.svg" alt="" />
-          <p class="comment">
-            In today's digital world, your website is the first interaction
-            consumers have with your business. That's why almost 95 percent of a
-            users first impression.
-          </p>
-          <p class="client-name text-primary-color">John Phelipataton</p>
+        <div class="slider">
+          <div class="slide">
+            <div class="client-image">
+              <img src="img/hero-image.png" alt="" />
+            </div>
+            <div class="message-container">
+              <img src="img/quote.svg" alt="" />
+              <p class="comment">
+                In today's digital world, your website is the first interaction
+                consumers have with your business. That's why almost 95 percent
+                of a users first impression.
+              </p>
+              <p class="client-name text-primary-color">John Phelipataton</p>
+            </div>
+          </div>
+          <!-- --------------------------- -->
+          <div class="slide">
+            <div class="client-image">
+              <img src="img/hero-image.png" alt="" />
+            </div>
+            <div class="message-container">
+              <img src="img/quote.svg" alt="" />
+              <p class="comment">
+                In today's digital world, your website is the first interaction
+                consumers have with your business. That's why almost 95 percent
+                of a users first impression.
+              </p>
+              <p class="client-name text-primary-color">John Phelipataton</p>
+            </div>
+          </div>
+          <!-- --------------------------- -->
+          <div class="slide">
+            <div class="client-image">
+              <img src="img/hero-image.png" alt="" />
+            </div>
+            <div class="message-container">
+              <img src="img/quote.svg" alt="" />
+              <p class="comment">
+                In today's digital world, your website is the first interaction
+                consumers have with your business. That's why almost 95 percent
+                of a users first impression.
+              </p>
+              <p class="client-name text-primary-color">John Phelipataton</p>
+            </div>
+          </div>
         </div>
         <div class="arrows">
-          <img src="img/arrow-right.svg" alt="" />
-          <img src="img/arrow-left.svg" alt="" />
+          <img src="img/arrow-right.svg" class="slider__btn--right" />
+          <img src="img/arrow-left.svg" class="slider__btn--left" />
         </div>
       </div>
     </section>
 
     <!-- ---------------- SECTION CONTACT -------------------- -->
-    <section class="contact container">
+    <section class="section contact container" id="section--7">
       <div class="text-align-center container-md section-header">
         <p class="large-text text-uppercase text-primary-color">Contact me</p>
         <h2>I Want To Hear From You</h2>

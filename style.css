@@ -1,21 +1,45 @@
-header {
+.header {
   height: 5.2rem;
   margin-top: 3.2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-nav {
+.main-nav {
   display: flex;
   gap: 4rem;
 }
 
-nav a {
-  transition: all 0.4s;
+.main-nav-list {
+  display: flex;
+  gap: 3.2rem;
+  list-style: none;
 }
-nav a:hover {
+
+.main-nav-link:link,
+.main-nav-link:visited {
+  color: #505050;
+  transition: all 0.3s;
+}
+.main-nav-link:hover,
+.main-nav-link:focus {
   color: var(--primary-color);
 }
+
+/* Mobile Nav */
+.btn-mobile-nav {
+  display: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+.icon-mobile-nav {
+  color: #505050;
+}
+.icon-close {
+  display: none;
+}
+
 .hero {
   height: 70rem;
 }
@@ -33,6 +57,10 @@ nav a:hover {
 .hero-image {
   display: flex;
   justify-content: center;
+  overflow: hidden;
+  /* background-image: url("img/bg-1.png");
+  background-repeat: no-repeat;
+  background-size: contain; */
 }
 
 .about-text {
@@ -41,10 +69,6 @@ nav a:hover {
   gap: 4.5rem;
 }
 
-.section-hidden {
-  display: none;
-  transform: translateY(8rem);
-}
 /* ******************* PORTFOLIO ******************* */
 .portfolio-grid {
   display: grid;
@@ -193,15 +217,35 @@ nav a:hover {
 
 /* ******************* TESTIMONIALS ******************* */
 .testimonial-container {
+  position: relative;
   max-width: 994px;
-  margin-right: auto;
   margin-left: auto;
+  margin-right: auto;
+}
+.slider {
+  max-width: 994px;
+  height: 35rem;
+  margin: 0 auto;
+  position: relative;
+
+  /* IN THE END */
+  overflow: hidden;
+}
+.slide {
   display: grid;
-  grid-template-columns: 30% 60% 10%;
+  grid-template-columns: 30% 70%;
   column-gap: 3.2rem;
   align-items: center;
-  padding-right: 73px;
-  padding-left: 73px;
+
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 35rem;
+
+  padding-right: 7.5rem;
+
+  /* THIS creates the animation! */
+  transition: transform 1s;
 }
 .client-image {
   /* width: 276px; */
@@ -224,11 +268,19 @@ nav a:hover {
   width: 64px;
   height: 64px;
 }
+.comment {
+  width: 95%;
+}
 .arrows {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
   display: flex;
   flex-direction: column;
   row-gap: 1.6rem;
   align-items: center;
+  cursor: pointer;
 }
 
 /* ******************* CONTACT ******************* */
@@ -303,4 +355,294 @@ footer {
   align-items: center;
   padding-top: 1.6rem;
   padding-bottom: 1.6rem;
+}
+
+.section-hidden {
+  opacity: 0;
+  transform: translateY(8rem);
+}
+
+/* -------------- Media Query --------------- */
+
+/* -------------- MAX WIDTH 992 --------------- */
+@media (max-width: 992px) {
+  img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+  .container {
+    max-width: 992px;
+    padding-right: 4rem;
+    padding-left: 4rem;
+  }
+  section {
+    padding-top: 6.4rem;
+    padding-bottom: 6.4rem;
+  }
+  .col-2 {
+    column-gap: 3.2rem;
+    align-items: center;
+  }
+
+  /* ------------------- HERO ------------------- */
+  .hero {
+    height: auto;
+  }
+  .hero-image {
+    max-height: 40rem;
+  }
+
+  /* ------------------- SERVICES ------------------- */
+
+  .card-item {
+    padding: 4rem;
+  }
+
+  /* ------------------- TESTIMONIALS ------------------- */
+
+  .slide {
+    align-items: center;
+    grid-template-columns: 30% 70%;
+    top: 0;
+    width: 100%;
+    height: 35rem;
+    padding-right: 7.5rem;
+    transition: transform 1s;
+  }
+  .client-image {
+    min-width: 185px;
+    min-height: 185px;
+    height: auto;
+  }
+
+  .contact-info {
+    display: flex;
+    justify-content: space-between;
+    gap: 3.2rem;
+    flex-wrap: wrap;
+    max-width: 80rem;
+    align-items: center;
+  }
+
+  .contact-list {
+    flex-direction: column;
+    gap: 2.4rem;
+  }
+  /* ------------------- FEATURES ------------------- */
+  .single-feature {
+    padding: 3rem 2rem;
+    margin-bottom: 0;
+  }
+  .feature-icon {
+    position: relative;
+    left: 0;
+    top: 0;
+    margin-bottom: 2rem;
+  }
+}
+
+/* -------------- MAX WIDTH 768 --------------- */
+
+@media (max-width: 767px) {
+  .container {
+    max-width: 767px;
+    padding-right: 2.4rem;
+    padding-left: 2.4rem;
+  }
+  section {
+    padding-top: 6.4rem;
+    padding-bottom: 6.4rem;
+  }
+  .col-2 {
+    /* width: 50%;
+  padding: 0 0.8rem; */
+    display: grid;
+    /* grid-template-columns: repeat(2, 1fr); */
+    grid-template-columns: 1fr;
+  }
+  /* mobile nav  */
+  .btn-mobile-nav {
+    display: block;
+    z-index: 100;
+  }
+
+  .main-nav {
+    background-color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: all 0.5s;
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+  }
+
+  .nav-open .main-nav {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+    z-index: 10;
+  }
+
+  .nav-open .icon-close {
+    display: block;
+  }
+  .nav-open .icon-open {
+    display: none;
+  }
+  .main-nav-list {
+    flex-direction: column;
+    align-items: center;
+    gap: 3.2rem;
+
+    font-size: 2.4rem;
+  }
+
+  .header {
+    height: auto;
+    padding: 0 2.4rem;
+  }
+
+  .nav-item {
+    flex-direction: column;
+  }
+  .nav-link {
+    text-decoration: none;
+    font-size: 3rem;
+    color: #505050;
+  }
+
+  /* ----------------- HERO ---------------- */
+  .hero {
+    height: auto;
+    margin: 5.6rem auto;
+    row-gap: 4rem;
+  }
+  .hero-text {
+    text-align: center;
+    align-items: center;
+  }
+  .hero-text h2 {
+    font-size: 3rem;
+    font-weight: 500;
+  }
+
+  /* ----------------- ABOUT ---------------- */
+
+  .about-image {
+    grid-area: 2;
+  }
+  .about-text {
+    margin-bottom: 4rem;
+  }
+  /* ******************* PORTFOLIO ******************* */
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, 1fr);
+    grid-gap: 4.5rem;
+    margin-top: 9.5rem;
+  }
+
+  .item-1 {
+    grid-row: auto;
+    height: 32rem;
+    max-width: 767px;
+  }
+  .item-2 {
+    grid-row: auto;
+    height: 32rem;
+  }
+  .item-3 {
+    grid-row: auto;
+    height: 32rem;
+  }
+  .item-4 {
+    grid-row: auto;
+    height: 32rem;
+  }
+  .item-5 {
+    grid-row: auto;
+    height: 32rem;
+  }
+  .item-6 {
+    grid-row: auto;
+    height: 32rem;
+  }
+
+  .card {
+    max-width: 100%;
+  }
+  .card img {
+    width: 100%;
+    transition: all 0.4s;
+  }
+  /* ******************* SERVICES ******************* */
+
+  .services-card-container {
+    display: grid;
+    /* grid-template-columns: repeat(2, 1fr); */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    column-gap: 3.2rem;
+    row-gap: 3.2rem;
+  }
+
+  .card-item {
+    padding: 3.2rem;
+  }
+
+  /* ******************* TESTIMONIALS ******************* */
+  .slider {
+    height: 40rem;
+  }
+
+  .slide {
+    grid-template-columns: 1fr;
+    height: 40rem;
+    padding-right: 0rem;
+  }
+
+  .message-container {
+    grid-area: 1;
+  }
+
+  .client-image {
+    width: 10rem;
+    height: 10rem;
+    /* margin-top: 1.6rem; */
+  }
+  .arrows {
+    right: 3.2rem;
+    bottom: 3rem;
+    top: auto;
+    transform: translateY(0%);
+  }
+  /* ******************* CONTACT ******************* */
+
+  .contact-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2.4rem;
+  }
+  .contact-list {
+    flex-direction: row;
+    gap: 2.4rem;
+  }
+
+  form span {
+    padding-right: 0rem;
+    margin-bottom: 1.6rem;
+  }
+
+  .footer {
+    flex-direction: column;
+    gap: 1.6rem;
+  }
 }
